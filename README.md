@@ -33,11 +33,15 @@ Pasos a seguir para trabajar en ellos
 	pip install -r requirements.txt
 	```
 	
-3. Para revisar el nombre e informacion de los archivos en el data set
+Documentacion adicional:
+
+1. Para revisar el nombre e informacion de los archivos en el data set de Anime 2023
+	Debes tener el archivo `kaggle.json` que contiene la configuracion de la API de Kaggle de tu usuario, esto
+	dentro de la carpeta `.kaggle` en `/home/user`.
 	```
 	kaggle datasets files dbdmobile/myanimelist-dataset
 	```
-	
+
 ## Content
 
 ------------------------------------------ "anime-dataset-2023.csv" ----------------------------------------------
