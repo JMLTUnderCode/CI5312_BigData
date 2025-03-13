@@ -3,6 +3,41 @@ Desarrollo de soluciones a un DataSet mediante MapReduce
 
 Link directo a Data Set: [Anime Dataset 2023](https://www.kaggle.com/datasets/dbdmobile/myanimelist-dataset)
 
+## Indicaciones previas
+
+### By Junior Miguel Lara Torres
+
+Estoy usando Python/Pandas para el manejo del dataset como un dataframe y que sea mas sencillo.
+Pasos a seguir para trabajar en ellos
+
+1. Crear un envirotment de Python
+	```
+	python3 -m venv <mi-entorno>         # Ejemplo: python3 -m venv env
+	```
+	Activar el entorno virtual
+	```
+	source <mi-entorno>/bin/activate         # Ejemplo: source env/bin/activate
+	```
+	En caso de querer salir del entorno virtual realiza
+	```
+	deactivate
+	```
+	En caso de querer eliminar el entorno virtual
+	```
+	sudo rm -rf mi_entorno         # Ejemplo sudo rm -rf env
+	```
+2. Instalar las librerías necesarias
+	El repositorio tiene un archivo `requeriments.txt` donde estan todas las dependencias usadas.
+	Debes intalarla en tu entorno. 
+	```
+	pip install -r requirements.txt
+	```
+	
+3. Para revisar el nombre e informacion de los archivos en el data set
+	```
+	kaggle datasets files dbdmobile/myanimelist-dataset
+	```
+	
 ## Content
 
 ------------------------------------------ "anime-dataset-2023.csv" ----------------------------------------------
