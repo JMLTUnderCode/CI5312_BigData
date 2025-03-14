@@ -1,8 +1,9 @@
-# Reducer para combinar datos de usuarios y sus puntuaciones
+#!/usr/bin/python3
 
 import sys
 from collections import defaultdict
 
+# Reducer para combinar datos de usuarios y sus puntuaciones
 def reducer():
     user_ratings = defaultdict(list)
     

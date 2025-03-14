@@ -1,8 +1,9 @@
-# Reducer para analizar la distribución geográfica y puntuaciones
+#!/usr/bin/python3
 
 import sys
 from collections import defaultdict
 
+# Reducer para analizar la distribución geográfica y puntuaciones
 def reducer():
     location_ratings = defaultdict(list)
     

@@ -1,8 +1,9 @@
-# Mapper para combinar datos de ubicaciones y puntuaciones
+#!/usr/bin/python3
 
 import sys
 import csv
 
+# Mapper para combinar datos de ubicaciones y puntuaciones
 def mapper():
     reader = csv.reader(sys.stdin)
     for row in reader:
