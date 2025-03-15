@@ -28,7 +28,7 @@ def reducer():
         user_per_location[location].append(user_id)
 
     for location, users in user_per_location.items():
-        print(f"{location}\t{len(users)}")
+        print(f"{location}\t{len(users)}\t{users}")
         
 if __name__ == "__main__":
     reducer()
