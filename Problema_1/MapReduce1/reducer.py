@@ -1,13 +1,22 @@
 #!/usr/bin/python3
 
+"""
+	Este Reducer esta encargado de recibir los datos del mapper asociado
+    que constituye "localización - usuario" luego realizar un conteo de
+	usuarios por localización. De esta forma se obtiene la cantidad de 
+    usuarios por pais.
+    
+    Colaboradores en este archivo:
+    - Junior Lara
+    - Astrid Alvarado
+"""
+
 import sys
 from collections import defaultdict
 
-# Reducer para combinar datos de usuarios y ubicaciones
+# Reducer para contar usuarios por localización
 def reducer():
     user_per_location = defaultdict(list)
-    
-    current_user_id = None
     
     for line in sys.stdin:
         parts = line.strip().split("\t")
@@ -16,13 +25,7 @@ def reducer():
             continue # Si no hay dos partes, se ignora la línea (i.e no hay ubicación)
 
         location, user_id = parts 
-        
-        # Si el usuario es el mismo, se ignora
-        if current_user_id == user_id:
-            continue
-        else:
-            user_per_location[location].append(user_id)
-            current_user_id = user_id
+        user_per_location[location].append(user_id)
 
     for location, users in user_per_location.items():
         print(f"{location}\t{len(users)}")
