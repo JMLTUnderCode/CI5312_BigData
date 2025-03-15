@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 
+"""
+	Este Reducer 
+    
+    Colaboradores en este archivo:
+    - Junior Lara
+    - Astrid Alvarado
+"""
+
 import sys
 from collections import defaultdict
 

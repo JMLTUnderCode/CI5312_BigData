@@ -25,37 +25,40 @@ Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directori
 Una vez estando dentro de la carpeta hadoop de jueguete. Seguir esta secuencia de comandos permite ejecutar el primer trabajo MapReduce:
 NOTA: Revisar los path relativos en los comandos. Los comandos mostrados a continuacion funcionan bajo el sistema de archivos de `Junior Miguel Lara Torres`.
 ```
-rm -r output/output_step1 MapReduce/1/*; cp ../CI5312_BigData/Problema_1/MapReduce1/* MapReduce/1 
+rm -r output/output_item1 MapReduce/1/*; cp ../CI5312_BigData/Problema_1/Item_1/* MapReduce/1 
 ```
 ```
-./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-details-2023.csv -output output/output_step1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/1/mapper.py -file MapReduce/1/reducer.py -file piplib
+./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-details-2023.csv -output output/output_item1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/1/mapper.py -file MapReduce/1/reducer.py -file piplib
 ```
 ```
-cat output/output_step1/part-00000
+cat output/output_item1/part-00000
 ```
 ## Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones
 
 Estando dentro de la carpeta hadoop de juguete, ejecutar:
 
+* Primer Job
 ```
-rm -r output/output_step2 MapReduce/2/*; cp ../CI5312_BigData/Problema_1/MapReduce2/* MapReduce/2
-```
-```
-./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-score-2023.csv -output output/output_step2 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/2/mapper.py -file MapReduce/2/reducer.py
+rm -r output/output_item2_p1 MapReduce/2/*; cp ../CI5312_BigData/Problema_1/Item2/MapReduce1/* MapReduce/2
 ```
 ```
-cat output/output_step2/part-00000
+./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input tests/vshort-users-score-2023.csv -output output/output_item2_p1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/2/mapper.py -file MapReduce/2/reducer.py
 ```
+```
+cat output/output_item2_p1/part-00000
+```
+
+* Segundo Job
+```
+rm -r output/output_item2_p2 MapReduce/2/*; cp ../CI5312_BigData/Problema_1/Item2/MapReduce2/* MapReduce/2
+```
+```
+./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input output/output_item1/* -output output/output_item2_p2 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/2/mapper.py -file MapReduce/2/reducer.py -file output/output_item2_p2/*
+```
+```
+cat output/output_item2_p1/part-00000
+```
+
 ## Paso 3: Ejecutar el tercer trabajo MapReduce para combinar datos de ubicaciones y puntuaciones
 
-```
-rm -r output/output_step3 MapReduce/3/*; cp ../CI5312_BigData/Problema_1/MapReduce3/* MapReduce/3
-```
-
-```
-./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-score-2023.csv -output output/output_step3 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/3/mapper.py -file MapReduce/3/reducer.py
-```
-
-```
-cat output/output_step3/part-00000
-```
+Por documentar
