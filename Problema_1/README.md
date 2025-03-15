@@ -14,7 +14,7 @@ Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directori
   - `1`: Contendrá el mapper y reducer 1.
   - `2`: Contendrá el mapper y reducer 2.
   - `3`: Contendrá el mapper y reducer 3.
-  - Asi sucericamente.
+  - Asi sucesivamente.
 
 Una vez estando dentro de la carpeta hadoop de jueguete.
 ```
@@ -23,7 +23,10 @@ Una vez estando dentro de la carpeta hadoop de jueguete.
 
 ## Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones
 
-Falta documentar
+Estando dentro de la carpeta hadoop de juguete, ejecutar:
+```
+./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-score-2023.csv -output output/output_step2 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/2/mapper.py -file MapReduce/2/reducer.py
+```
 
 ## Paso 3: Ejecutar el tercer trabajo MapReduce para combinar datos de ubicaciones y puntuaciones
 
