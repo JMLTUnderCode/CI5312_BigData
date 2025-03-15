@@ -3,23 +3,21 @@
 import sys
 from collections import defaultdict
 
-# Reducer para combinar datos de usuarios y sus puntuaciones
 def reducer():
-    user_ratings = defaultdict(list)
-    
+    user_scores = defaultdict(list)
+
     for line in sys.stdin:
-        line = line.strip()
-        user_id, rating = line.split('\t')
+        user_id, score = line.strip().split("\t")
         try:
-            rating = float(rating)
-            user_ratings[user_id].append(rating)
+            score = float(score)
+            user_scores[user_id].append(score)
         except ValueError:
             continue
-    
-    for user_id, ratings in user_ratings.items():
-        if ratings:
-            avg_rating = sum(ratings) / len(ratings)
-            print(f"{user_id}\t{avg_rating}")
+
+    for user_id, scores in user_scores.items():
+        if scores:
+            avg_score = sum(scores) / len(scores)
+            print(f"{user_id}\t{avg_score}")
 
 if __name__ == "__main__":
     reducer()
