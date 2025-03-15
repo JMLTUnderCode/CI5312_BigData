@@ -1,5 +1,15 @@
 #!/usr/bin/python3
 
+"""
+	Este Reducer esta encargado de recibir los datos del mapper asociado
+    que constituye "genero_anime - genero_usuario". Se realiza un conteo
+    de la cantidad de hombres y mujeres por genero de anime, para luego
+    calcular el porcentaje de hombres y mujeres por genero de anime.
+    
+    Colaboradores en este archivo:
+    - Astrid Alvarado
+"""
+
 import sys
 from collections import defaultdict
 
