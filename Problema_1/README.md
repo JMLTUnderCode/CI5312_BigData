@@ -28,10 +28,9 @@ Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directori
 	```
 	NOTA: Quizas se vayan agregando mas librerias. Revisar este archivo en caso de tener errores de modulos en sus ejecuciones.
 - `MapReduce`: Contendrá todos los archivos de MapReduce en subcarpetas como sigue:
-  - `1`: Contendrá el mapper y/o reducer del Item 1
+  - `1`: Contendrá el mapper y/o reducer del Item 1.
   - `2`: Contendrá el mapper y/o reducer del Item 2.
   - `3`: Contendrá el mapper y/o reducer del Item 3.
-  - Asi sucesivamente.
 
 >[!IMPORTANT]
 >Estando en la carpeta hadoop.
