@@ -18,15 +18,12 @@
 		- [Segundo Job](#segundo-job)
 	- [**Paso 3: Ejecutar el tercer trabajo MapReduce para combinar datos de ubicaciones y puntuaciones**](#paso-3-ejecutar-el-tercer-trabajo-mapreduce-para-combinar-datos-de-ubicaciones-y-puntuaciones)
 		- [**Descripción**](#descripción)
-		- [**Archivos Utilizados**](#archivos-utilizados)
+		- [**Archivos**](#archivos)
 		- [**Comandos para Ejecución**](#comandos-para-ejecución)
 		- [**Resultados**](#resultados)
 		- [**Ejemplo de Salida**](#ejemplo-de-salida)
 			- [Top 10 países con puntuaciones promedio altas](#top-10-países-con-puntuaciones-promedio-altas)
 			- [Top 10 países con puntuaciones promedio bajas](#top-10-países-con-puntuaciones-promedio-bajas)
-		- [**Detalles del Código**](#detalles-del-código)
-			- [**`mapper.py`**](#mapperpy)
-			- [**`reducer.py`**](#reducerpy)
 
 ## Ejecución
 
@@ -174,26 +171,18 @@ En este paso, se busca analizar la relación entre los promedios de las puntuaci
 
 ---
 
-### **Archivos Utilizados**
+### **Archivos**
 
 1. **`mapper.py`**
    * Este archivo procesa dos archivos CSV:
      * **`vshort-users-details-2023.csv`**: Contiene información sobre los usuarios (ubicaciones).
      * **`vshort-users-score-2023.csv`**: Contiene las puntuaciones otorgadas por los usuarios.
-   * La salida del Mapper tiene el formato: `country \t 1 \t avg_rating`.
-   * Ver detalles completos del código [aquí](#mapperpy).
 
 2. **`reducer.py`**
    * Este archivo recibe la salida del Mapper y realiza:
      * Agrupación por país.
      * Cálculo del promedio ponderado de puntuaciones por país.
      * Generación de listas de los 10 países con puntuaciones más altas y más bajas.
-   * La salida del Reducer tiene el formato:
-
-     ```bash
-     Top 10 países con puntuaciones promedio altas:
-     <country> <count> <avg>
-     ```
 
 3. **`clean.sh`**
    * Limpia los resultados de ejecuciones previas:
@@ -265,37 +254,29 @@ El Reducer genera dos listas principales:
 #### Top 10 países con puntuaciones promedio altas
 
 ```bash
-Japan       150   8.75
-USA         200   8.20
-Germany     100   8.05
-...
+Quezon City, Philippines      1   10.00
+Cebu, Philippines             1    9.44
+Ontario, Canada               1    9.09
+New World                     1    8.84
+London, England               1    8.77
+Harrisburg, PA                1    8.76
+D.F, Mexico                   1    8.73
+Seattle, Washington           1    8.71
+New Haven, CT                 1    8.70
+Manila                        1    8.68
 ```
 
 #### Top 10 países con puntuaciones promedio bajas
 
 ```bash
-Unknown     50    4.25
-India       70    5.10
-Russia      60    5.50
-...
+Huntington Beach, California  1    1.00
+Reykjavik, Iceland            1    5.23
+Prague                        1    5.31
+Good ol' Europe               1    5.31
+Sao Paulo, Brazil             1    5.32
+Dejima                        1    5.83
+Wilmington, North Carolina    1    5.83
+Helsinki, Finland             1    6.01
+Austin, TX                    1    6.02
+Chester, California           1    6.03
 ```
-
----
-
-### **Detalles del Código**
-
-#### **`mapper.py`**
-
-Este archivo realiza las siguientes tareas:
-
-1. Carga los datos de `vshort-users-details-2023.csv`.
-2. Acumula las puntuaciones por usuario desde `vshort-users-score-2023.csv`.
-3. Calcula el promedio de puntuaciones por usuario y emite el país junto con su promedio.
-
-#### **`reducer.py`**
-
-Este archivo:
-
-1. Agrupa los datos por país.
-2. Calcula los promedios finales ponderados por país.
-3. Devuelve los 10 países con promedios más altos y bajos.
