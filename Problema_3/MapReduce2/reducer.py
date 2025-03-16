@@ -3,6 +3,18 @@
 import sys
 from collections import defaultdict
 
+"""
+	Este Reducer esta encargado de recibir los datos del mapper asociado
+    que constituye "titulo - genero_usuario - popularidad". Se realiza un conteo
+    de la cantidad de hombres y mujeres por titulo de anime, para luego
+    calcular el porcentaje de hombres y mujeres. Adicionalmente se imprime
+    la popularidad del anime.
+    
+    Colaboradores en este archivo:
+    - Astrid Alvarado
+    - Junior Lara
+"""
+
 def reducer():
     anime_data = defaultdict(lambda: {'male': 0, 'female': 0, 'popularity': 0})
 
