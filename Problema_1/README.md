@@ -23,7 +23,7 @@ Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directori
 - `output`: Contendrá todas las salidas realizadas.
 - `piplib`: Donde deben estar las librerias a usar y pasar al job. Se debe instalar las siguientes librerias:
   - pycountry
-	```
+	```bash
 	pip install pycountry -t ./piplib
 	```
 	NOTA: Quizas se vayan agregando mas librerias. Revisar este archivo en caso de tener errores de modulos en sus ejecuciones.
@@ -43,17 +43,17 @@ A continuacion se muestran los pasos y comandos a ejecutar para tener la soluci�
 ### Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises.
 
 * Limpiamos los directorios de salida y copiamos los archivos del trabajo a la carpeta `hadoop/MapReduce/1`
-```
+```bash
 rm -r output/output_item1 MapReduce/1/*; cp ../CI5312_BigData/Problema_1/Item_1/* MapReduce/1 
 ```
 
 * Ejecutar el primer trabajo que solventa el primer item.
-```
+```bash
 ./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-details-2023.csv -output output/output_item1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/1/mapper.py -file MapReduce/1/reducer.py -file piplib
 ```
 
 * En caso de querer observar la salida del Job
-```
+```bash
 cat output/output_item1/part-00000
 ```
 ### Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones
@@ -64,17 +64,17 @@ cat output/output_item1/part-00000
 #### Primer Job
 
 * Limpiamos los directorios de salida y copiamos los archivos del primer sub-trabajo a la carpeta `hadoop/MapReduce/2`
-```
+```bash
 rm -r output/output_item2_p1 MapReduce/2/*; cp ../CI5312_BigData/Problema_1/Item_2/MapReduce1/* MapReduce/2
 ```
 
 * Ejecutar el primer sub-trabajo que solventa el segundo item.
-```
+```bash
 ./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-score-2023.csv -output output/output_item2_p1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/2/mapper.py -file MapReduce/2/reducer.py
 ```
 
 * En caso de querer observar la salida del Job
-```
+```bash
 cat output/output_item2_p1/part-00000
 ```
 
@@ -90,17 +90,17 @@ cat output/output_item2_p1/part-00000
 >  Ahora bien en caso de querer, no por streaming sino lectura de archivo como tal, se debe implementar una lógica de lectura basado en esta idea de partes de un archivo, para mas información de código ir al `mapper.py` de este segundo sub-job función llamada `load_user_averages`.
 
 * Limpiamos los directorios de salida y copiamos los archivos del segundo sub-trabajo a la carpeta `hadoop/MapReduce/2`
-```
+```bash
 rm -r output/output_item2_p2 MapReduce/2/*; cp ../CI5312_BigData/Problema_1/Item_2/MapReduce2/* MapReduce/2
 ```
 
 * Ejecutar el segundo sub-trabajo que solventa el segundo item.
-```
+```bash
 ./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input output/output_item1 -output output/output_item2_p2 -mapper "python3 mapper.py" -file MapReduce/2/mapper.py -file output/output_item2_p1
 ```
 
 * En caso de querer observar la salida del Job
-```
+```bash
 cat output/output_item2_p2/part-00000
 ```
 
