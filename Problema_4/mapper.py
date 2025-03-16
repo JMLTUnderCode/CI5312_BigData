@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 
 """
-Mapper para analizar las tendencias de géneros de anime consumidos según
-el signo zodiacal de los usuarios y los meses en los que los estudios publican animes.
+Mapper para identificar patrones de consumo de géneros de anime según los signos zodiacales.
 
 Entrada:
-- CSV `vshort-users-details-2023.csv` desde STDIN.
+- `vshort-users-details-2023.csv` desde STDIN.
+- `vshort-anime-filtered.csv` cargado externamente.
 
 Salida:
-- Emite: `<signo_zodiacal>\t<mes_publicación>\t1`.
+- Emitir pares clave-valor: `<signo_zodiacal>\t<género>`.
 """
 
 import sys
 import csv
 from datetime import datetime
+import os
 
 def get_zodiac_sign(month, day):
     """Determina el signo zodiacal basado en el mes y día de nacimiento."""
@@ -36,20 +37,46 @@ def get_zodiac_sign(month, day):
             return sign
     return "Unknown"
 
+def load_anime_genres(file_path):
+    """Carga los géneros de animes desde el archivo `vshort-anime-filtered.csv`."""
+    anime_genres = {}
+    file_path = os.path.expanduser(file_path)
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                anime_id = row["anime_id"].strip()
+                genres = row["Genres"].strip()
+                anime_genres[anime_id] = genres
+    except Exception as e:
+        print(f"Error cargando datos de géneros: {e}", file=sys.stderr)
+    return anime_genres
+
 def mapper():
+    # Ruta al archivo de géneros de anime
+    anime_file_path = "~/CI5312_BigData/tests/vshort-anime-filtered.csv"
+    anime_genres = load_anime_genres(anime_file_path)
+
+    # Leer el archivo de usuarios desde STDIN
     reader = csv.DictReader(sys.stdin)
     for row in reader:
         try:
-            # Parsear la fecha de cumpleaños
+            # Obtener el signo zodiacal del usuario
             birthday = row["Birthday"]
             if birthday:
-                birthday = datetime.fromisoformat(birthday)
-                zodiac_sign = get_zodiac_sign(birthday.month, birthday.day)
-                # Emitir pares clave-valor
-                # Nota: Aquí, "mes_publicación" podría integrarse como entrada externa de estudios.
-                print(f"{zodiac_sign}\t{birthday.month}\t1")
+                birthday_date = datetime.fromisoformat(birthday)
+                zodiac_sign = get_zodiac_sign(birthday_date.month, birthday_date.day)
+            else:
+                zodiac_sign = "Unknown"
+            
+            # Relacionar el usuario con géneros de animes
+            user_anime_id = row["Mal ID"].strip()
+            if user_anime_id in anime_genres:
+                genres = anime_genres[user_anime_id]
+                # Emitir clave-valor: signo zodiacal y género
+                for genre in genres.split(","):
+                    print(f"{zodiac_sign}\t{genre.strip()}")
         except Exception as e:
-            # Si hay algún problema con los datos, ignorar la fila
             continue
 
 if __name__ == "__main__":

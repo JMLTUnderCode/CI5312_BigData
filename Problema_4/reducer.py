@@ -1,38 +1,33 @@
 #!/usr/bin/python3
 
 """
-Reducer para analizar las tendencias de géneros de anime consumidos según
-el signo zodiacal y la publicación por meses.
+Reducer para agrupar los géneros de anime según el signo zodiacal.
 
 Entrada:
-- Formato: `<signo_zodiacal>\t<mes_publicación>\t1`.
+- Formato: `<signo_zodiacal>\t<género>`.
 
 Salida:
-- Total de registros agrupados por `<signo_zodiacal>` y `<mes_publicación>`.
+- Total de géneros por signo zodiacal: `<signo_zodiacal>\t<género>\t<conteo>`.
 """
 
 import sys
 from collections import defaultdict
 
 def reducer():
-    # Diccionario para agrupar los datos
     data = defaultdict(lambda: defaultdict(int))
 
-    # Procesar cada línea de entrada
+    # Leer línea por línea desde STDIN
     for line in sys.stdin:
         try:
-            zodiac_sign, month, count = line.strip().split("\t")
-            count = int(count)
-            # Agrupar por signo y mes
-            data[zodiac_sign][month] += count
+            zodiac_sign, genre = line.strip().split("\t")
+            data[zodiac_sign][genre] += 1
         except Exception as e:
-            # Si hay algún problema con los datos, ignorar la línea
             continue
 
-    # Emitir resultados agrupados y ordenados
-    for zodiac_sign, months in data.items():
-        for month, total_count in sorted(months.items(), key=lambda x: int(x[0])):
-            print(f"{zodiac_sign}\t{month}\t{total_count}")
+    # Emitir resultados
+    for zodiac_sign, genres in data.items():
+        for genre, count in genres.items():
+            print(f"{zodiac_sign}\t{genre}\t{count}")
 
 if __name__ == "__main__":
     reducer()
