@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 """
-	Este Reducer 
+    Este Reducer esta encargado de recibir los datos del mapper asociado
+    que constituye "usuario - rating" luego realizar un promedio de
+	ratings por usuario.
     
     Colaboradores en este archivo:
     - Junior Lara
@@ -11,21 +13,16 @@
 import sys
 from collections import defaultdict
 
+# Reducer
 def reducer():
-    user_scores = defaultdict(list)
-
+    users_avg = defaultdict(list)
     for line in sys.stdin:
-        user_id, score = line.strip().split("\t")
-        try:
-            score = float(score)
-            user_scores[user_id].append(score)
-        except ValueError:
-            continue
+        user_id, rating = line.strip().split("\t")
+        users_avg[user_id].append(float(rating))
 
-    for user_id, scores in user_scores.items():
-        if scores:
-            avg_score = sum(scores) / len(scores)
-            print(f"{user_id}\t{avg_score}")
-
+    for user_id, ratings in users_avg.items():
+        avg = sum(ratings) / len(ratings)
+        print(f"{user_id}\t{avg}")
+        
 if __name__ == "__main__":
     reducer()
