@@ -35,7 +35,7 @@ def load_user_details(details_path):
 
 def mapper():
     # Ruta del archivo de detalles
-    details_path = "~/hadoop/test/vshort-users-details-2023.csv"
+    details_path = "~/CI5312_BigData/tests/vshort-users-details-2023.csv"
     user_details = load_user_details(details_path)
     
     # Diccionario para acumular rating por usuario: {user_id: [suma_ratings, cantidad]}
