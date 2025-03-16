@@ -5,55 +5,45 @@ Descripción
 Este script es un reducer para Hadoop Streaming que calcula el promedio de los puntajes asociados a cada fuente (source).
 
 Procesa pares clave-valor tabulados (source \t score) desde la entrada estándar y calcula:
-
-La suma acumulada de los puntajes por fuente.
-
-El número de elementos para calcular la media.
-
-Finalmente, emite los resultados en formato tabulado (source \t mean).
+- La suma acumulada de los puntajes por fuente.
+- El número de elementos para calcular la media.
+- Finalmente, emite los resultados con formato tabulado y detalles descriptivos.
 """
 
 import sys
 
-# Función principal para el reducer
 def reducer():
-    # Diccionario para almacenar los datos agregados por fuente
+    # Diccionario para almacenar datos agregados por fuente
     data = {}
-    
-    # Leer línea por línea desde la entrada estándar (stdin)
+
+    # Leer y procesar la entrada estándar (stdin)
     for line in sys.stdin:
-        # Dividir la línea en partes usando el tabulador como delimitador
         parts = line.strip().split("\t")
         if len(parts) != 2:
-            # Ignorar líneas mal formateadas
-            continue
+            continue  # Ignorar líneas mal formateadas
+
         source, score = parts
         if score == "NULL":
-            # Ignorar valores "NULL"
-            continue
+            continue  # Ignorar valores "NULL"
+
         try:
-            # Intentar convertir el puntaje a un número flotante
-            score_val = float(score)
+            score_val = float(score)  # Convertir el puntaje a un número flotante
         except ValueError:
-            # Ignorar valores que no se puedan convertir
-            continue
-        
-        # Agregar o actualizar los datos agregados para la fuente
+            continue  # Ignorar valores no numéricos
+
+        # Agregar o actualizar los datos en el diccionario
         if source not in data:
-            # Inicializar suma y contador para una fuente nueva
             data[source] = {'sum': score_val, 'count': 1}
         else:
-            # Actualizar suma y contador para una fuente existente
             data[source]['sum'] += score_val
             data[source]['count'] += 1
 
-    # Calcular y emitir la media por cada fuente
-    for source, values in data.items():
-        if values['count'] > 0:
-            # Calcular el promedio de los puntajes
-            mean_value = values['sum'] / values['count']
-            print(f"{source}\t{mean_value}")
+    # Emitir resultados calculados con un formato más claro
+    print("Fuente\tPromedio de Puntuaciones")
+    print("-------------------------------")
+    for source, values in sorted(data.items()):
+        mean_value = values['sum'] / values['count']
+        print(f"{source}\t{mean_value:.2f}")
 
-# Punto de entrada del script
 if __name__ == "__main__":
     reducer()
