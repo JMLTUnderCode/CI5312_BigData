@@ -11,7 +11,7 @@ files_dataset = [
 ]
 
 # Función para crear versiones cortas de los archivos
-def create_short_versions(files, num_lines=200):
+def create_short_versions(files, num_lines=1000):
     for file_name in files:
         try:
             # Leer las primeras 200 líneas del archivo
@@ -21,7 +21,7 @@ def create_short_versions(files, num_lines=200):
             short_file_name = f"vshort-{file_name}"
             
             # Guardar el archivo corto
-            df.to_csv(r"tests/"+short_file_name, index=False)
+            df.to_csv(r"../tests/"+short_file_name, index=False)
             print(f"Archivo corto creado: {short_file_name}")
         except FileNotFoundError:
             print(f"Error: El archivo {file_name} no existe.")
