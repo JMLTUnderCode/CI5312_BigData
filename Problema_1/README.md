@@ -10,20 +10,20 @@
 ## Indice
 
 - [Problema 1](#problema-1)
-	- [Indice](#indice)
-	- [Ejecución](#ejecución)
-	- [Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises.](#paso-1-ejecutar-el-primer-trabajo-mapreduce-para-combinar-datos-de-usuarios-y-paises)
-	- [Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones](#paso-2-ejecutar-el-segundo-trabajo-mapreduce-para-combinar-datos-de-usuarios-y-sus-puntuaciones)
-		- [Primer Job](#primer-job)
-		- [Segundo Job](#segundo-job)
-	- [**Paso 3: Ejecutar el tercer trabajo MapReduce para combinar datos de ubicaciones y puntuaciones**](#paso-3-ejecutar-el-tercer-trabajo-mapreduce-para-combinar-datos-de-ubicaciones-y-puntuaciones)
-		- [**Descripción**](#descripción)
-		- [**Archivos**](#archivos)
-		- [**Comandos para Ejecución**](#comandos-para-ejecución)
-		- [**Resultados**](#resultados)
-		- [**Ejemplo de Salida**](#ejemplo-de-salida)
-			- [Top 10 países con puntuaciones promedio altas](#top-10-países-con-puntuaciones-promedio-altas)
-			- [Top 10 países con puntuaciones promedio bajas](#top-10-países-con-puntuaciones-promedio-bajas)
+  - [Indice](#indice)
+  - [Ejecución](#ejecución)
+  - [Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises](#paso-1-ejecutar-el-primer-trabajo-mapreduce-para-combinar-datos-de-usuarios-y-paises)
+  - [Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones](#paso-2-ejecutar-el-segundo-trabajo-mapreduce-para-combinar-datos-de-usuarios-y-sus-puntuaciones)
+    - [Primer Job](#primer-job)
+    - [Segundo Job](#segundo-job)
+  - [**Paso 3: Ejecutar el tercer trabajo MapReduce para combinar datos de ubicaciones y puntuaciones**](#paso-3-ejecutar-el-tercer-trabajo-mapreduce-para-combinar-datos-de-ubicaciones-y-puntuaciones)
+    - [**Descripción**](#descripción)
+    - [**Archivos**](#archivos)
+    - [**Comandos para Ejecución**](#comandos-para-ejecución)
+    - [**Resultados**](#resultados)
+    - [**Ejemplo de Salida**](#ejemplo-de-salida)
+      - [Top 10 países con puntuaciones promedio altas](#top-10-países-con-puntuaciones-promedio-altas)
+      - [Top 10 países con puntuaciones promedio bajas](#top-10-países-con-puntuaciones-promedio-bajas)
 
 ## Ejecución
 
@@ -50,7 +50,7 @@ Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directori
 >
 > ```bash
 >    hadoop/
->    ├── <archivos en general de hadoop>/	
+>    ├── <archivos en general de hadoop>/ 
 >    ├── test/
 >        ├── *.csv
 >    ├── output/
@@ -74,15 +74,14 @@ Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directori
 >    ├── piplib/
 >        ├── *lib.py
 > ```
-
+>
 >[!IMPORTANT]
 >Estando en la carpeta hadoop.
 A continuacion se muestran los pasos y comandos a ejecutar para tener la solución al primer problema.
-
 > [!NOTE]
 > Revisar los path relativos en los comandos. Los comandos mostrados a continuacion funcionan bajo el sistema de archivos de `Junior Miguel Lara Torres`.
 
-## Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises.
+## Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises
 
 * Limpiamos los directorios de salida y copiamos los archivos del trabajo a la carpeta `hadoop/MapReduce/1`
 

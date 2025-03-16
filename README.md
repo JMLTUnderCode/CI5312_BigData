@@ -1,6 +1,6 @@
 # CI5312_BigData
 
-**Desarrollo de soluciones a un DataSet mediante MapReduce**
+## **Desarrollo de soluciones a un DataSet mediante MapReduce**
 
 Este proyecto utiliza técnicas de procesamiento de datos basadas en MapReduce, implementadas con Hadoop Streaming y Python, para resolver diversos problemas relacionados con un dataset de animes.
 
