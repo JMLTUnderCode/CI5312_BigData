@@ -15,6 +15,7 @@
 	- [Ejecución](#ejecución)
 	- [Paso 1: Ejecutar el trabajo MapReduce para determinar la distribución de hombres y mujeres en un anime](#paso-1-ejecutar-el-trabajo-mapreduce-para-determinar-la-distribución-de-hombres-y-mujeres-en-un-anime)
 	- [Paso 2: Ejecutar el trabajo MapReduce para Calcular el porcentaje de hombres y mujeres por género de anime](#paso-2-ejecutar-el-trabajo-mapreduce-para-calcular-el-porcentaje-de-hombres-y-mujeres-por-género-de-anime)
+	- [Paso 3: Ejecutar el trabajo MapReduce para Calcular el porcentaje de hombres y mujeres por tipo de source](#paso-3-ejecutar-el-trabajo-mapreduce-para-calcular-el-porcentaje-de-hombres-y-mujeres-por-tipo-de-source)
 
 ## Ejecución
 
@@ -81,4 +82,24 @@ rm -r output/p3-item2 MapReduce/p3-2/*; cp ../CI5312_BigData/Problema_3/Item_2/*
 
 ```bash
 cat output/p3-item2/part-00000
+```
+
+## Paso 3: Ejecutar el trabajo MapReduce para Calcular el porcentaje de hombres y mujeres por tipo de source
+
+* Limpiamos los directorios de salida y copiamos los archivos del primer sub-trabajo a la carpeta `hadoop/MapReduce/p3-3`
+
+```bash
+rm -r output/p3-item3 MapReduce/p3-3/*; cp ../CI5312_BigData/Problema_3/Item_3/* MapReduce/p3-3
+```
+
+* Ejecutar el primer sub-trabajo que solventa el segundo item.
+
+```bash
+./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-final_animedataset.csv -output output/p3-item3 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/p3-3/mapper.py -file MapReduce/p3-3/reducer.py
+```
+
+* En caso de querer observar la salida del Job
+
+```bash
+cat output/p3-item3/part-00000
 ```
