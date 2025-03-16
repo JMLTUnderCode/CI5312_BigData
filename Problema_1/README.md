@@ -28,9 +28,9 @@ Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directori
 	```
 	NOTA: Quizas se vayan agregando mas librerias. Revisar este archivo en caso de tener errores de modulos en sus ejecuciones.
 - `MapReduce`: Contendrá todos los archivos de MapReduce en subcarpetas como sigue:
-  - `1`: Contendrá el mapper y/o reducer del Item 1.
-  - `2`: Contendrá el mapper y/o reducer del Item 2.
-  - `3`: Contendrá el mapper y/o reducer del Item 3.
+  - `p1-1`: Contendrá el mapper y/o reducer del Item 1.
+  - `p1-2`: Contendrá el mapper y/o reducer del Item 2.
+  - `p1-3`: Contendrá el mapper y/o reducer del Item 3.
 
 >[!IMPORTANT]
 >Estando en la carpeta hadoop.
@@ -43,18 +43,19 @@ A continuacion se muestran los pasos y comandos a ejecutar para tener la soluci�
 
 * Limpiamos los directorios de salida y copiamos los archivos del trabajo a la carpeta `hadoop/MapReduce/1`
 ```bash
-rm -r output/output_item1 MapReduce/1/*; cp ../CI5312_BigData/Problema_1/Item_1/* MapReduce/1 
+rm -r output/p1-item1 MapReduce/p1-1/*; cp ../CI5312_BigData/Problema_1/Item_1/* MapReduce/p1-1 
 ```
 
 * Ejecutar el primer trabajo que solventa el primer item.
 ```bash
-./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-details-2023.csv -output output/output_item1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/1/mapper.py -file MapReduce/1/reducer.py -file piplib
+./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-details-2023.csv -output output/p1_item1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/p1-1/mapper.py -file MapReduce/p1-1/reducer.py -file piplib
 ```
 
 * En caso de querer observar la salida del Job
 ```bash
-cat output/output_item1/part-00000
+cat output/p1-item1/part-00000
 ```
+
 ## Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones
 
 >[!NOTE]
@@ -62,19 +63,19 @@ cat output/output_item1/part-00000
 
 ### Primer Job
 
-* Limpiamos los directorios de salida y copiamos los archivos del primer sub-trabajo a la carpeta `hadoop/MapReduce/2`
+* Limpiamos los directorios de salida y copiamos los archivos del primer sub-trabajo a la carpeta `hadoop/MapReduce/p1-2`
 ```bash
-rm -r output/output_item2_p1 MapReduce/2/*; cp ../CI5312_BigData/Problema_1/Item_2/MapReduce1/* MapReduce/2
+rm -r output/p1-item2-part1 MapReduce/p1-2/*; cp ../CI5312_BigData/Problema_1/Item_2/MapReduce1/* MapReduce/p1-2
 ```
 
 * Ejecutar el primer sub-trabajo que solventa el segundo item.
 ```bash
-./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-score-2023.csv -output output/output_item2_p1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/2/mapper.py -file MapReduce/2/reducer.py
+./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-users-score-2023.csv -output output/p1-item2-part1 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/p1-2/mapper.py -file MapReduce/p1-2/reducer.py
 ```
 
 * En caso de querer observar la salida del Job
 ```bash
-cat output/output_item2_p1/part-00000
+cat output/p1-item2-part1/part-00000
 ```
 
 ### Segundo Job
@@ -90,17 +91,17 @@ cat output/output_item2_p1/part-00000
 
 * Limpiamos los directorios de salida y copiamos los archivos del segundo sub-trabajo a la carpeta `hadoop/MapReduce/2`
 ```bash
-rm -r output/output_item2_p2 MapReduce/2/*; cp ../CI5312_BigData/Problema_1/Item_2/MapReduce2/* MapReduce/2
+rm -r output/p1-item2-part2 MapReduce/p1-2/*; cp ../CI5312_BigData/Problema_1/Item_2/MapReduce2/* MapReduce/p1-2
 ```
 
 * Ejecutar el segundo sub-trabajo que solventa el segundo item.
 ```bash
-./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input output/output_item1 -output output/output_item2_p2 -mapper "python3 mapper.py" -file MapReduce/2/mapper.py -file output/output_item2_p1
+./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input output/p1-item1 -output output/p1-item2_part2 -mapper "python3 mapper.py" -file MapReduce/2/mapper.py -file output/p1-item2-part1
 ```
 
 * En caso de querer observar la salida del Job
 ```bash
-cat output/output_item2_p2/part-00000
+cat output/p1-item2-part2/part-00000
 ```
 
 ## Paso 3: Ejecutar el tercer trabajo MapReduce para combinar datos de ubicaciones y puntuaciones
