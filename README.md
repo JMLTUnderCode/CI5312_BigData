@@ -62,69 +62,35 @@ pip install -r requirements.txt
 
 ## **Contenido del Dataset**
 
-### Archivo: **`anime-dataset-2023.csv`**
+### Archivo: `"anime-dataset-2023.csv"`
 
-Este archivo contiene información detallada sobre los animes disponibles en la base de datos:
+- `anime_id`: ID único para cada anime.
+- `Name`: Nombre del anime en su idioma original.
+- `English name`: Nombre en inglés.
+- `Other name`: Nombre o título en idioma nativo (japonés, chino, etc.).
+- `Score`: Calificación o puntuación del anime.
+- `Genres`: Géneros del anime, separados por comas.
+- `Synopsis`: Resumen breve del argumento del anime.
+- `Type`: Tipo de anime (e.g., TV, película, OVA).
+- `Episodes`: Número de episodios.
+- `Aired`: Fechas de emisión.
+- `Source`: Material de origen del anime (e.g., manga, novela ligera, original).
+- (Consulta el resto de las columnas en el dataset completo).
 
-- `anime_id`: Unique ID for each anime.
-- `Name`: The name of the anime in its original language.
-- `English name`: The English name of the anime.
-- `Other name`: Native name or title of the anime (can be in Japanese, Chinese, or Korean).
-- `Score`: The score or rating given to the anime.
-- `Genres`: The genres of the anime, separated by commas.
-- `Synopsis`: A brief description or summary of the anime's plot.
-- `Type`: The type of the anime (e.g., TV series, movie, OVA, etc.).
-- `Episodes`: The number of episodes in the anime.
-- `Aired`: The dates when the anime was aired.
-- `Premiered`: The season and year when the anime premiered.
-- `Status`: The status of the anime (e.g., Finished Airing, Currently Airing, etc.).
-- `Producers`: The production companies or producers of the anime.
-- `Licensors`: The licensors of the anime (e.g., streaming platforms).
-- `Studios`: The animation studios that worked on the anime.
-- `Source`: The source material of the anime (e.g., manga, light novel, original).
-- `Duration`: The duration of each episode.
-- `Rating`: The age rating of the anime.
-- `Rank`: The rank of the anime based on popularity or other criteria.
-- `Popularity`: The popularity rank of the anime.
-- `Favorites`: The number of times the anime was marked as a favorite by users.
-- `Scored By`: The number of users who scored the anime.
-- `Members`: The number of members who have added the anime to their list on the platform.
-- `Image URL`: The URL of the anime's image or poster.
+### Archivo: `"users-details-2023.csv"`
 
----
+- `Mal ID`: ID único para cada usuario.
+- `Username`: Nombre de usuario.
+- `Gender`: Género del usuario.
+- `Days Watched`: Días totales viendo anime.
+- `Mean Score`: Calificación promedio otorgada por el usuario.
+- (Consulta el resto de las columnas en el dataset completo).
 
-### Archivo: **`users-details-2023.csv`**
+### Archivo: `"users-score-2023.csv"`
 
-Este archivo contiene información sobre los usuarios que han interactuado con la plataforma:
-
-- `Mal ID`: Unique ID for each user.
-- `Username`: The username of the user.
-- `Gender`: The gender of the user.
-- `Birthday`: The birthday of the user (in ISO format).
-- `Location`: The location or country of the user.
-- `Joined`: The date when the user joined the platform (in ISO format).
-- `Days Watched`: The total number of days the user has spent watching anime.
-- `Mean Score`: The average score given by the user to the anime they have watched.
-- `Watching`: The number of anime currently being watched by the user.
-- `Completed`: The number of anime completed by the user.
-- `On Hold`: The number of anime on hold by the user.
-- `Dropped`: The number of anime dropped by the user.
-- `Plan to Watch`: The number of anime the user plans to watch in the future.
-- `Total Entries`: The total number of anime entries in the user's list.
-- `Rewatched`: The number of anime rewatched by the user.
-- `Episodes Watched`: The total number of episodes watched by the user.
-
----
-
-### Archivo: **`users-score-2023.csv`**
-
-Este archivo describe las puntuaciones otorgadas por los usuarios a diferentes animes:
-
-- `user_id`: Unique ID for each user.
-- `Username`: The username of the user.
-- `anime_id`: Unique ID for each anime.
-- `Anime Title`: The title of the anime.
-- `rating`: The rating given by the user to the anime.
+- `user_id`: ID único para cada usuario.
+- `anime_id`: ID único para cada anime.
+- `rating`: Calificación otorgada por el usuario al anime.
 
 ---
 
