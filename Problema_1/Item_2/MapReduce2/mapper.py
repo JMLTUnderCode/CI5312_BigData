@@ -53,7 +53,7 @@ def load_user_averages(output_dir):
 # Mapper para calcular promedio total de puntuacion por pais.
 def mapper():
     # Cargar el diccionario de user_id -> average
-    user_averages = load_user_averages("output/output_item2_p1")
+    user_averages = load_user_averages("output/p1-item2-part1")
     country_avg = defaultdict(list)
     
     for line in sys.stdin:
