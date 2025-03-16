@@ -26,6 +26,7 @@ def mapper():
             anime_title = row[5]  # Columna 'title'
             user_gender = row[4]  # Columna 'gender'
             popularity = row[11]  # Columna 'popularity'
+            
             print(f"{anime_title}\t{user_gender}\t{popularity}")
 
 if __name__ == "__main__":
