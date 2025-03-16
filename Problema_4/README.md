@@ -1,11 +1,15 @@
-# Problema 4
+# **Problema 4**
 
->[!IMPORTANT]
-> Analizar las tendencias de géneros de anime consumidos por los usuarios según su signo zodiacal.
+## **Analizar las tendencias de géneros de anime consumidos por los usuarios según su signo zodiacal.**
 >
-> * Item 1: Determinar si existe tendencia de que los estudios publiquen animes en determinado mes del año según la fecha de cumpleaños del público que suele votar por animes que el estudio ha publicado en otras oportunidades.
+> **Items principales:**
+>
+> - Identificar patrones de consumo de géneros de anime asociados a los signos zodiacales.
+> - Determinar si existe tendencia de que los estudios publiquen animes en determinados meses del año según la fecha de cumpleaños del público que suele votar por animes publicados anteriormente.
 
-## **Objetivo:**
+---
+
+## **Objetivo**
 
 Analizar las tendencias de géneros de anime consumidos por los usuarios según su signo zodiacal y determinar si existe una relación entre los meses de publicación de animes por parte de los estudios y las fechas de cumpleaños del público que vota por ellos.
 
@@ -18,82 +22,101 @@ Este análisis busca:
 
 ## **Índice**
 
-- [Problema 4](#problema-4)
-  - [**Objetivo:**](#objetivo)
-  - [**Índice**](#índice)
-  - [**Ejecución**](#ejecución)
-    - [**Archivos Utilizados**](#archivos-utilizados)
-    - [**Comandos para Ejecución**](#comandos-para-ejecución)
-    - [**Estructura de Carpetas**](#estructura-de-carpetas)
-  - [**Resultados**](#resultados)
-    - [**Ejemplo de Salida**](#ejemplo-de-salida)
-      - [**Top 5 Signos Zodiacales con Más Interacción en el Mes de Publicación**](#top-5-signos-zodiacales-con-más-interacción-en-el-mes-de-publicación)
-    - [**Interpretación**](#interpretación)
+1. [Objetivo](#objetivo)
+2. [Archivos Utilizados](#archivos-utilizados)
+3. [Ejecución](#ejecución)
+4. [Comandos para Ejecución](#comandos-para-ejecución)
+5. [Estructura de Carpetas](#estructura-de-carpetas)
+6. [Resultados](#resultados)
+7. [Interpretación](#interpretación)
+
+---
+
+## **Archivos Utilizados**
+
+1. **`mapper.py`**:
+   - Determina el signo zodiacal de cada usuario basado en el campo `Birthday` del archivo `vshort-users-details-2023.csv`.
+   - Genera pares clave-valor en el formato:
+
+     ```bash
+     <signo_zodiacal>\t<género>
+     ```
+
+2. **`reducer.py`**:
+   - Agrupa los datos del Mapper 1 para calcular cuántos usuarios consumieron un género específico según su signo zodiacal.
+   - Genera resultados en el formato:
+
+     ```bash
+     <signo_zodiacal>\t<género>\t<conteo>
+     ```
+
+3. **`mapper2.py`**:
+   - Lee la salida del primer MapReduce (`part-00000`) e identifica la relación entre los géneros y los meses de publicación.
+   - Cruza los datos del archivo `vshort-anime-filtered.csv` para incluir los meses de publicación.
+   - Genera pares clave-valor en el formato:
+
+     ```bash
+     <signo_zodiacal>\t<mes_publicación>\t<conteo>
+     ```
+
+4. **`reducer2.py`**:
+   - Agrupa los datos del Mapper 2 para calcular cuántos usuarios, por signo zodiacal, interactúan con animes publicados en un mes específico.
+   - Agrega una leyenda explicativa antes de los resultados.
+   - Genera resultados en el formato:
+
+     ```bash
+     <signo_zodiacal>\t<mes_publicación>\t<conteo>
+     ```
+
+5. **`clean.sh`**:
+   - Automatiza la limpieza de directorios previos (`output/` y `output2/`) antes de la ejecución de los MapReduce.
+   - Contenido:
+
+     ```bash
+     #!/bin/bash
+     rm -r output/* output2/* 2>/dev/null
+     ```
+
+6. **`run.sh`**:
+   - Automatiza la ejecución de ambas fases del trabajo MapReduce (Mapper 1 + Reducer 1 y Mapper 2 + Reducer 2).
+   - Configura rutas, valida la existencia de scripts y directorios, y ejecuta ambos trabajos.
+   - Fragmento:
+
+     ```bash
+     echo "Ejecutando el primer trabajo de MapReduce..."
+     $HADOOP_BIN jar $HADOOP_STREAMING_JAR \
+         -input $INPUT_FILE \
+         -output $OUTPUT_DIR \
+         -mapper "python3 $MAPPER1" \
+         -reducer "python3 $REDUCER1" \
+         -file $MAPPER1 \
+         -file $REDUCER1
+     ```
+
+7. **Dataset**:
+   - **`vshort-users-details-2023.csv`**:
+     Contiene información sobre los usuarios, incluyendo su cumpleaños y otras estadísticas relacionadas con el consumo de anime.
+   - **`vshort-anime-filtered.csv`**:
+     Proporciona información sobre los animes, incluyendo géneros y meses de publicación.
 
 ---
 
 ## **Ejecución**
 
-### **Archivos Utilizados**
-
-1. **`mapper.py`**:
-   * Calcula el signo zodiacal del usuario basado en el campo `Birthday` del dataset.
-   * Genera pares clave-valor en el formato:
-
-     ```bash
-     <signo_zodiacal>\t<mes_publicación>\t1
-     ```
-
-2. **`reducer.py`**:
-   * Agrupa las entradas generadas por el Mapper para calcular la cantidad total de registros por signo zodiacal y mes de publicación.
-   * Devuelve resultados en el formato:
-
-     ```bash
-     <signo_zodiacal>\t<mes_publicación>\t<total>
-     ```
-
-3. **`clean.sh`**:
-   * Limpia el directorio de resultados (`output/`) de ejecuciones anteriores:
-
-     ```bash
-     #!/bin/bash
-     rm -r output/*
-     ```
-
-4. **`run.sh`**:
-   * Ejecuta el trabajo de Hadoop Streaming con los archivos del Mapper y Reducer:
-
-     ```bash
-     #!/bin/bash
-     HADOOP_HOME=~/hadoop
-     HADOOP_BIN=$HADOOP_HOME/bin/hadoop
-     HADOOP_STREAMING_JAR=$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming.jar
-
-     INPUT_FILE=../tests/vshort-users-details-2023.csv
-     OUTPUT_DIR=./output
-     MAPPER=./mapper.py
-     REDUCER=./reducer.py
-
-     $HADOOP_BIN jar $HADOOP_STREAMING_JAR \
-         -input $INPUT_FILE \
-         -output $OUTPUT_DIR \
-         -mapper "python3 $MAPPER" \
-         -reducer "python3 $REDUCER" \
-         -file $MAPPER \
-         -file $REDUCER
-     ```
+1. Asegúrate de que los archivos `vshort-users-details-2023.csv` y `vshort-anime-filtered.csv` estén ubicados en la carpeta `test/` dentro del directorio principal del proyecto.
+2. Asegúrate de que los directorios `output/` y `output2/` estén vacíos o que se ejecuten los comandos de limpieza.
 
 ---
 
-### **Comandos para Ejecución**
+## **Comandos para Ejecución**
 
-1. Limpiar resultados previos:
+### **1. Limpiar resultados previos**
 
    ```bash
    ./clean.sh
    ```
 
-2. Ejecutar el trabajo MapReduce:
+### **2. Ejecutar el trabajo completo**
 
    ```bash
    ./run.sh
@@ -101,18 +124,25 @@ Este análisis busca:
 
 ---
 
-### **Estructura de Carpetas**
+## **Estructura de Carpetas**
 
-Dentro del directorio principal del proyecto, deben existir las siguientes carpetas:
+El proyecto debe tener la siguiente estructura:
 
-1. **`test/`**:
-   * Contiene el archivo `vshort-users-details-2023.csv`.
-
-2. **`output/`**:
-   * Almacena los resultados generados por el Reducer.
-
-3. **`Problema_4/`**:
-   * Incluye los scripts `mapper.py` y `reducer.py`.
+```bash
+CI5312_BigData/
+├── test/
+│   ├── vshort-users-details-2023.csv
+│   ├── vshort-anime-filtered.csv
+├── output/
+├── output2/
+├── Problema_4/
+│   ├── mapper1.py
+│   ├── reducer1.py
+│   ├── mapper2.py
+│   ├── reducer2.py
+│   ├── clean.sh
+│   ├── run.sh
+```
 
 ---
 
@@ -120,16 +150,26 @@ Dentro del directorio principal del proyecto, deben existir las siguientes carpe
 
 ### **Ejemplo de Salida**
 
-#### **Top 5 Signos Zodiacales con Más Interacción en el Mes de Publicación**
+#### **Salida Reducer 2: Relación Signos Zodiacales y Meses de Publicación**
 
-| Signo Zodiacal | Mes Publicación | Total de Votos |
-|----------------|-----------------|----------------|
-| Aries          | 3               | 15             |
-| Pisces         | 3               | 12             |
-| Aquarius       | 1               | 10             |
-| Capricorn      | 1               | 9              |
-| Libra          | 10              | 8              |
+```bash
+Relación entre signos zodiacales y meses de publicación
+-----------------------------------------------------
+Formato:
+Signo Zodiacal Mes Publicación Conteo
+(Mes Publicación: 1 = Enero, ..., 12 = Diciembre)
+-----------------------------------------------------
+Aquarius 1 6
+Aquarius 2 8
+Aries 3 15
+Pisces 3 12
+Capricorn 12 9
+...
+```
 
-### **Interpretación**
+---
 
-Los resultados muestran que ciertos signos zodiacales tienen más interacción con animes publicados en determinados meses, lo que podría reflejar patrones de consumo influenciados por la fecha de nacimiento.
+## **Interpretación**
+
+1. Los géneros de anime consumidos varían significativamente según los signos zodiacales. Por ejemplo, **Aquarius** muestra preferencia por animes de acción publicados en enero y febrero.
+2. Los datos indican que los estudios pueden estar publicando animes en ciertos meses para atraer audiencias específicas basadas en su signo zodiacal.
