@@ -9,14 +9,14 @@
 # Indice
 - [Problema 1](#problema-1)
 - [Indice](#indice)
-	- [Ejecución](#ejecución)
-		- [Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises.](#paso-1-ejecutar-el-primer-trabajo-mapreduce-para-combinar-datos-de-usuarios-y-paises)
-		- [Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones](#paso-2-ejecutar-el-segundo-trabajo-mapreduce-para-combinar-datos-de-usuarios-y-sus-puntuaciones)
-			- [Primer Job](#primer-job)
-			- [Segundo Job](#segundo-job)
+- [Ejecución](#ejecución)
+	- [Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises.](#paso-1-ejecutar-el-primer-trabajo-mapreduce-para-combinar-datos-de-usuarios-y-paises)
+	- [Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones](#paso-2-ejecutar-el-segundo-trabajo-mapreduce-para-combinar-datos-de-usuarios-y-sus-puntuaciones)
+		- [Primer Job](#primer-job)
+		- [Segundo Job](#segundo-job)
 	- [Paso 3: Ejecutar el tercer trabajo MapReduce para combinar datos de ubicaciones y puntuaciones](#paso-3-ejecutar-el-tercer-trabajo-mapreduce-para-combinar-datos-de-ubicaciones-y-puntuaciones)
 
-## Ejecución
+# Ejecución
 
 Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directorios:
 - `test`: Contendrá todos los archivos `vshort-*` del dataset.
@@ -40,7 +40,7 @@ A continuacion se muestran los pasos y comandos a ejecutar para tener la soluci�
 > [!NOTE]
 > Revisar los path relativos en los comandos. Los comandos mostrados a continuacion funcionan bajo el sistema de archivos de `Junior Miguel Lara Torres`.
 
-### Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises.
+## Paso 1: Ejecutar el primer trabajo MapReduce para combinar datos de usuarios y paises.
 
 * Limpiamos los directorios de salida y copiamos los archivos del trabajo a la carpeta `hadoop/MapReduce/1`
 ```bash
@@ -56,12 +56,12 @@ rm -r output/output_item1 MapReduce/1/*; cp ../CI5312_BigData/Problema_1/Item_1/
 ```bash
 cat output/output_item1/part-00000
 ```
-### Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones
+## Paso 2: Ejecutar el segundo trabajo MapReduce para combinar datos de usuarios y sus puntuaciones
 
 >[!NOTE]
 > Este item se divide el dos subjobs.
 
-#### Primer Job
+### Primer Job
 
 * Limpiamos los directorios de salida y copiamos los archivos del primer sub-trabajo a la carpeta `hadoop/MapReduce/2`
 ```bash
@@ -78,7 +78,7 @@ rm -r output/output_item2_p1 MapReduce/2/*; cp ../CI5312_BigData/Problema_1/Item
 cat output/output_item2_p1/part-00000
 ```
 
-#### Segundo Job
+### Segundo Job
 
 >[!IMPORTANT]
 > Este job recibe dos archivos de salidas de otros jobs, por tanto es natural dudar con el tema de lectura de archivo y el streaming de lo mismos. 
