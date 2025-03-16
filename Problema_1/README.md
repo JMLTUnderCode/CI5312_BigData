@@ -33,6 +33,35 @@ Dentro de la carpeta de hadoop de jueguete debe exister los siguientes directori
   - `p1-3`: Contendrá el mapper y/o reducer del Item 3.
 
 >[!IMPORTANT]
+> El sistema de archivos que se espera trabajar es:
+> ```bash
+>    hadoop/
+>    ├── <archivos en general de hadoop>/	
+>    ├── test/
+>        ├── *.csv
+>    ├── output/
+>        ├── p1-item1/
+>            ├── part-00000
+>            ├── part-00001
+>        ├── p1-item2/
+>            ├── part-00000
+>        ├── p*-item*/
+>            ├── part-*
+>        ├── ...
+>    ├── MapReduce/
+>        ├── p1-1/
+>            ├── mapper.py
+>            ├── reducer.py
+>        ├── p1-2/
+>            ├── mapper.py
+>            ├── reducer.py
+>        ├── p2-*/
+>            ├── *.py
+>    ├── piplib/
+>        ├── *lib.py
+> ```
+
+>[!IMPORTANT]
 >Estando en la carpeta hadoop.
 A continuacion se muestran los pasos y comandos a ejecutar para tener la solución al primer problema.
 
