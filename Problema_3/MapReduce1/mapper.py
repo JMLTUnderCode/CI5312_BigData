@@ -12,6 +12,7 @@
     
     Colaboradores en este archivo:
     - Astrid Alvarado
+    - Junior Lara
 """
 
 import sys
