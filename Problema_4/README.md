@@ -111,7 +111,7 @@ Dentro del directorio principal del proyecto, deben existir las siguientes carpe
 2. **`output/`**:
    * Almacena los resultados generados por el Reducer.
 
-3. **`MapReduce/`**:
+3. **`Problema_4/`**:
    * Incluye los scripts `mapper.py` y `reducer.py`.
 
 ---
