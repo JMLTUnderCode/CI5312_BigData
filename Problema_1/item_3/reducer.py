@@ -46,12 +46,14 @@ def reducer():
     
     # Imprimir los resultados
     print("Top 10 países con puntuaciones promedio altas:")
+    print(f"Country\t# Users\tAverage Score")
     for country, count, avg in top_high:
-        print(f"{country}\t{count}\t{avg}")
+        print(f"{country}\t{count}\t{avg:.2f}")
     
     print("\nTop 10 países con puntuaciones promedio bajas:")
+    print(f"Country\t# Users\tAverage Score")
     for country, count, avg in top_low:
-        print(f"{country}\t{count}\t{avg}")
+        print(f"{country}\t{count}\t{avg:.2f}")
 
 if __name__ == "__main__":
     reducer()
