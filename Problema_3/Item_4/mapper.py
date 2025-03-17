@@ -2,7 +2,7 @@
 
 """
     Este Mapper está encargado de recibir la información del archivo
-    "anime-dataset.csv" y realizar la transformación de la información
+    "anime-dataset-2023.csv" y realizar la transformación de la información
     tomando varias columnas importantes:
     - "anime" para obtener el nombre del anime
     - "studio" para obtener los estudios de anime
