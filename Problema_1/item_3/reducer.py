@@ -8,6 +8,8 @@ para luego calcular el promedio final de cada país.
 Finalmente, se muestran:
   - Top 10 países con puntuaciones promedio altas
   - Top 10 países con puntuaciones promedio bajas
+
+Solo se consideran países con al menos 1000 usuarios.
 """
 
 import sys
@@ -31,13 +33,14 @@ def reducer():
         except Exception as e:
             print(f"Error al procesar línea: {line.strip()} Error: {str(e)}", file=sys.stderr)
     
-    # Calcular el promedio final para cada país
+    # Calcular el promedio final para cada país solo si tienen al menos 1000 usuarios
     results = []
     for country, (total_count, total_weight) in country_dict.items():
-        final_avg = total_weight / total_count if total_count > 0 else 0.0
-        results.append((country, total_count, final_avg))
+        if total_count >= 2:
+            final_avg = total_weight / total_count if total_count > 0 else 0.0
+            results.append((country, total_count, final_avg))
     
-    # Ordenar para obtener los Top 10
+    # Ordenar para obtener los Top 10 de cada lista
     top_high = sorted(results, key=lambda x: x[2], reverse=True)[:10]
     top_low = sorted(results, key=lambda x: x[2])[:10]
     

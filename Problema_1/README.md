@@ -253,29 +253,29 @@ El Reducer genera dos listas principales:
 #### Top 10 países con puntuaciones promedio altas
 
 ```bash
-Quezon City, Philippines      1   10.00
-Cebu, Philippines             1    9.44
-Ontario, Canada               1    9.09
-New World                     1    8.84
-London, England               1    8.77
-Harrisburg, PA                1    8.76
-D.F, Mexico                   1    8.73
-Seattle, Washington           1    8.71
-New Haven, CT                 1    8.70
-Manila                        1    8.68
+USA                     2       8.371576565849011
+Bergen, Norway          3       8.247619047619047
+New York                4       8.068391608391607
+Ohio                    2       8.046802858769212
+United States           2       8.035353535353535
+Unknown                 5523    7.969272099786784
+Finland                 5       7.9336285288285495
+Lithuania               5       7.857801403359663
+England                 2       7.760416666666666
+California              7       7.757263429774364
 ```
 
 #### Top 10 países con puntuaciones promedio bajas
 
 ```bash
-Huntington Beach, California  1    1.00
-Reykjavik, Iceland            1    5.23
-Prague                        1    5.31
-Good ol' Europe               1    5.31
-Sao Paulo, Brazil             1    5.32
-Dejima                        1    5.83
-Wilmington, North Carolina    1    5.83
-Helsinki, Finland             1    6.01
-Austin, TX                    1    6.02
-Chester, California           1    6.03
+Germany                 5       6.416224494306593
+Stockholm, Sweden       2       7.033977801646975
+Jerusalem, Israel       2       7.086079284101363
+France                  4       7.165015555343688
+Athens, Greece          3       7.1917262269095446
+Latvia                  2       7.218792036588646
+Singapore               2       7.251831501831502
+Florida                 3       7.369971380821563
+Israel                  7       7.421048977993936
+New Jersey              3       7.43302937488984
 ```
