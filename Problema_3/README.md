@@ -113,7 +113,7 @@ cat output/p3-item3/part-00000
 rm -r output/p3-item3 MapReduce/p3-4/*; cp ../CI5312_BigData/Problema_3/Item_4/* MapReduce/p3-4
 ```
 
-* Ejecutar el primer sub-trabajo que solventa el segundo item.
+* Ejecutamos el job que obtiene los datos de los demás items y crea un resultado final.
 
 ```bash
 ./bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -input test/vshort-anime-dataset-2023.csv -output output/p3-item4 -mapper "python3 mapper.py" -reducer "python3 reducer.py" -file MapReduce/p3-4/mapper.py -file MapReduce/p3-4/reducer.py
