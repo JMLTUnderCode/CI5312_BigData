@@ -2,10 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-_SUCCESS
-._SUCCESS.crc
-.part*
-part*
 # C extensions
 *.so
 
