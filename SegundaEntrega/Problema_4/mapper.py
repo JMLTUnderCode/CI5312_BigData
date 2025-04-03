@@ -54,7 +54,7 @@ def load_anime_genres(file_path):
 
 def mapper():
     # Ruta al archivo de géneros de anime
-    anime_file_path = "~/CI5312_BigData/tests/vshort-anime-filtered.csv"
+    anime_file_path = "~/CI5312_BigData/tests/anime-filtered.csv"
     anime_genres = load_anime_genres(anime_file_path)
 
     # Leer el archivo de usuarios desde STDIN

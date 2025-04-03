@@ -38,7 +38,7 @@ def load_anime_publication_data(file_path):
 
 def mapper():
     # Ruta al archivo de animes
-    anime_file_path = "~/CI5312_BigData/tests/vshort-anime-filtered.csv"
+    anime_file_path = "~/CI5312_BigData/tests/anime-filtered.csv"
     anime_months = load_anime_publication_data(anime_file_path)
 
     # Leer la salida del primer MapReduce desde STDIN

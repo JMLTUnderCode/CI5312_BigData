@@ -1,0 +1,549 @@
+ZodiacSign,Genre,Count
+Aquarius,Comedy,137
+Aquarius,Action,93
+Aquarius,Fantasy,89
+Aquarius,Adventure,77
+Aquarius,Sci-Fi,58
+Aquarius,Drama,58
+Aquarius,Shounen,49
+Aquarius,Slice of Life,48
+Aquarius,Kids,44
+Aquarius,School,41
+Aquarius,Romance,39
+Aquarius,Hentai,38
+Aquarius,Supernatural,31
+Aquarius,Music,30
+Aquarius,Ecchi,28
+Aquarius,Magic,27
+Aquarius,Historical,25
+Aquarius,Mecha,23
+Aquarius,Mystery,19
+Aquarius,Parody,18
+Aquarius,Sports,17
+Aquarius,Seinen,17
+Aquarius,Shoujo,15
+Aquarius,Martial Arts,15
+Aquarius,Super Power,14
+Aquarius,Game,12
+Aquarius,Military,11
+Aquarius,Psychological,10
+Aquarius,Space,8
+Aquarius,Horror,8
+Aquarius,Samurai,8
+Aquarius,Police,7
+Aquarius,Demons,7
+Aquarius,Dementia,5
+Aquarius,Josei,5
+Aquarius,Shounen Ai,4
+Aquarius,Yaoi,3
+Aquarius,Vampire,3
+Aquarius,Cars,3
+Aquarius,Shoujo Ai,1
+Aquarius,Harem,1
+Aries,Comedy,128
+Aries,Action,79
+Aries,Fantasy,73
+Aries,Sci-Fi,66
+Aries,Adventure,65
+Aries,Drama,57
+Aries,Shounen,55
+Aries,School,45
+Aries,Hentai,44
+Aries,Slice of Life,40
+Aries,Romance,36
+Aries,Supernatural,32
+Aries,Kids,29
+Aries,Music,28
+Aries,Ecchi,27
+Aries,Seinen,27
+Aries,Mecha,26
+Aries,Magic,23
+Aries,Mystery,23
+Aries,Historical,20
+Aries,Sports,19
+Aries,Harem,15
+Aries,Parody,15
+Aries,Demons,15
+Aries,Super Power,14
+Aries,Game,12
+Aries,Horror,11
+Aries,Shoujo,11
+Aries,Dementia,10
+Aries,Space,10
+Aries,Psychological,9
+Aries,Military,7
+Aries,Martial Arts,5
+Aries,Samurai,4
+Aries,Josei,4
+Aries,Police,4
+Aries,Shounen Ai,3
+Aries,Vampire,2
+Aries,Thriller,2
+Aries,Yuri,2
+Aries,Unknown,1
+Aries,Shoujo Ai,1
+Aries,Cars,1
+Cancer,Comedy,166
+Cancer,Action,103
+Cancer,Fantasy,89
+Cancer,Adventure,64
+Cancer,Sci-Fi,63
+Cancer,Shounen,60
+Cancer,Drama,52
+Cancer,Slice of Life,49
+Cancer,Music,45
+Cancer,Romance,45
+Cancer,Kids,44
+Cancer,School,41
+Cancer,Hentai,38
+Cancer,Supernatural,38
+Cancer,Mecha,30
+Cancer,Ecchi,28
+Cancer,Historical,25
+Cancer,Magic,25
+Cancer,Super Power,20
+Cancer,Harem,17
+Cancer,Parody,17
+Cancer,Seinen,17
+Cancer,Military,16
+Cancer,Sports,13
+Cancer,Shoujo,13
+Cancer,Mystery,13
+Cancer,Demons,12
+Cancer,Space,11
+Cancer,Martial Arts,11
+Cancer,Game,10
+Cancer,Dementia,10
+Cancer,Horror,8
+Cancer,Police,7
+Cancer,Samurai,7
+Cancer,Psychological,5
+Cancer,Shounen Ai,4
+Cancer,Cars,4
+Cancer,Josei,4
+Cancer,Thriller,2
+Cancer,Shoujo Ai,1
+Cancer,Vampire,1
+Capricorn,Comedy,150
+Capricorn,Action,97
+Capricorn,Fantasy,84
+Capricorn,Adventure,64
+Capricorn,Sci-Fi,62
+Capricorn,Romance,59
+Capricorn,Slice of Life,59
+Capricorn,Drama,58
+Capricorn,Music,54
+Capricorn,Kids,51
+Capricorn,Shounen,46
+Capricorn,School,44
+Capricorn,Hentai,42
+Capricorn,Supernatural,28
+Capricorn,Magic,28
+Capricorn,Historical,25
+Capricorn,Seinen,23
+Capricorn,Mystery,23
+Capricorn,Shoujo,22
+Capricorn,Sports,22
+Capricorn,Mecha,20
+Capricorn,Ecchi,20
+Capricorn,Military,19
+Capricorn,Parody,17
+Capricorn,Demons,16
+Capricorn,Super Power,16
+Capricorn,Harem,13
+Capricorn,Space,12
+Capricorn,Horror,11
+Capricorn,Martial Arts,11
+Capricorn,Game,11
+Capricorn,Dementia,10
+Capricorn,Police,7
+Capricorn,Samurai,6
+Capricorn,Shounen Ai,5
+Capricorn,Thriller,4
+Capricorn,Psychological,4
+Capricorn,Cars,3
+Capricorn,Josei,3
+Capricorn,Vampire,2
+Capricorn,Shoujo Ai,1
+Capricorn,Yaoi,1
+Gemini,Comedy,150
+Gemini,Action,107
+Gemini,Fantasy,84
+Gemini,Sci-Fi,77
+Gemini,Adventure,71
+Gemini,Drama,57
+Gemini,Romance,50
+Gemini,Hentai,48
+Gemini,Slice of Life,48
+Gemini,Shounen,45
+Gemini,School,45
+Gemini,Kids,45
+Gemini,Music,43
+Gemini,Mecha,35
+Gemini,Supernatural,34
+Gemini,Magic,28
+Gemini,Historical,27
+Gemini,Seinen,27
+Gemini,Mystery,25
+Gemini,Shoujo,23
+Gemini,Sports,18
+Gemini,Horror,15
+Gemini,Military,15
+Gemini,Demons,15
+Gemini,Super Power,14
+Gemini,Ecchi,13
+Gemini,Parody,12
+Gemini,Harem,12
+Gemini,Space,12
+Gemini,Martial Arts,10
+Gemini,Game,9
+Gemini,Police,9
+Gemini,Dementia,8
+Gemini,Psychological,6
+Gemini,Thriller,6
+Gemini,Vampire,5
+Gemini,Cars,5
+Gemini,Samurai,5
+Gemini,Josei,3
+Gemini,Shounen Ai,2
+Gemini,Yuri,1
+Gemini,Shoujo Ai,1
+Leo,Comedy,141
+Leo,Action,81
+Leo,Fantasy,73
+Leo,Adventure,56
+Leo,Drama,55
+Leo,Sci-Fi,55
+Leo,Shounen,53
+Leo,Romance,51
+Leo,School,47
+Leo,Slice of Life,44
+Leo,Kids,42
+Leo,Supernatural,36
+Leo,Music,32
+Leo,Hentai,27
+Leo,Magic,26
+Leo,Ecchi,25
+Leo,Shoujo,24
+Leo,Historical,21
+Leo,Mystery,20
+Leo,Seinen,19
+Leo,Sports,19
+Leo,Parody,18
+Leo,Super Power,17
+Leo,Military,17
+Leo,Mecha,16
+Leo,Demons,14
+Leo,Space,14
+Leo,Martial Arts,10
+Leo,Psychological,10
+Leo,Harem,10
+Leo,Horror,9
+Leo,Game,9
+Leo,Dementia,8
+Leo,Police,7
+Leo,Vampire,5
+Leo,Unknown,4
+Leo,Thriller,3
+Leo,Samurai,3
+Leo,Yaoi,2
+Leo,Shounen Ai,2
+Leo,Shoujo Ai,1
+Libra,Comedy,159
+Libra,Action,95
+Libra,Fantasy,90
+Libra,Adventure,76
+Libra,Sci-Fi,66
+Libra,Drama,60
+Libra,Slice of Life,47
+Libra,School,44
+Libra,Hentai,41
+Libra,Kids,40
+Libra,Romance,39
+Libra,Music,38
+Libra,Shounen,36
+Libra,Mecha,29
+Libra,Supernatural,27
+Libra,Ecchi,25
+Libra,Magic,24
+Libra,Historical,24
+Libra,Super Power,21
+Libra,Sports,21
+Libra,Seinen,18
+Libra,Mystery,18
+Libra,Shoujo,16
+Libra,Military,15
+Libra,Parody,15
+Libra,Psychological,14
+Libra,Harem,13
+Libra,Demons,12
+Libra,Dementia,12
+Libra,Space,12
+Libra,Game,12
+Libra,Martial Arts,8
+Libra,Horror,7
+Libra,Cars,6
+Libra,Police,4
+Libra,Thriller,4
+Libra,Vampire,3
+Libra,Samurai,2
+Libra,Yaoi,1
+Libra,Yuri,1
+Libra,Josei,1
+Libra,Shoujo Ai,1
+Pisces,Comedy,120
+Pisces,Action,81
+Pisces,Adventure,65
+Pisces,Fantasy,62
+Pisces,Sci-Fi,57
+Pisces,Drama,57
+Pisces,Slice of Life,47
+Pisces,Romance,44
+Pisces,School,43
+Pisces,Music,38
+Pisces,Shounen,38
+Pisces,Supernatural,34
+Pisces,Kids,33
+Pisces,Mecha,27
+Pisces,Hentai,23
+Pisces,Historical,19
+Pisces,Sports,19
+Pisces,Seinen,18
+Pisces,Dementia,17
+Pisces,Mystery,16
+Pisces,Magic,14
+Pisces,Parody,13
+Pisces,Ecchi,12
+Pisces,Horror,12
+Pisces,Demons,11
+Pisces,Super Power,11
+Pisces,Shoujo,10
+Pisces,Military,10
+Pisces,Space,9
+Pisces,Game,8
+Pisces,Psychological,8
+Pisces,Harem,8
+Pisces,Martial Arts,5
+Pisces,Police,4
+Pisces,Thriller,4
+Pisces,Vampire,4
+Pisces,Shounen Ai,3
+Pisces,Unknown,2
+Pisces,Samurai,2
+Pisces,Yaoi,1
+Pisces,Josei,1
+Pisces,Shoujo Ai,1
+Sagittarius,Comedy,162
+Sagittarius,Action,90
+Sagittarius,Adventure,80
+Sagittarius,Fantasy,70
+Sagittarius,Sci-Fi,60
+Sagittarius,Drama,58
+Sagittarius,Romance,51
+Sagittarius,Kids,51
+Sagittarius,Slice of Life,48
+Sagittarius,Hentai,46
+Sagittarius,Shounen,44
+Sagittarius,School,44
+Sagittarius,Music,40
+Sagittarius,Supernatural,36
+Sagittarius,Shoujo,31
+Sagittarius,Historical,24
+Sagittarius,Seinen,24
+Sagittarius,Mecha,23
+Sagittarius,Magic,23
+Sagittarius,Mystery,19
+Sagittarius,Ecchi,19
+Sagittarius,Parody,18
+Sagittarius,Military,16
+Sagittarius,Sports,15
+Sagittarius,Super Power,13
+Sagittarius,Demons,12
+Sagittarius,Harem,12
+Sagittarius,Dementia,11
+Sagittarius,Horror,11
+Sagittarius,Police,10
+Sagittarius,Space,10
+Sagittarius,Martial Arts,10
+Sagittarius,Game,7
+Sagittarius,Psychological,5
+Sagittarius,Shoujo Ai,5
+Sagittarius,Thriller,4
+Sagittarius,Vampire,4
+Sagittarius,Cars,3
+Sagittarius,Samurai,3
+Sagittarius,Yaoi,2
+Sagittarius,Josei,2
+Sagittarius,Yuri,1
+Scorpio,Comedy,124
+Scorpio,Action,90
+Scorpio,Fantasy,76
+Scorpio,Adventure,68
+Scorpio,Shounen,48
+Scorpio,Drama,45
+Scorpio,Sci-Fi,44
+Scorpio,Hentai,43
+Scorpio,Romance,38
+Scorpio,School,36
+Scorpio,Slice of Life,34
+Scorpio,Supernatural,34
+Scorpio,Historical,30
+Scorpio,Music,27
+Scorpio,Kids,23
+Scorpio,Mecha,22
+Scorpio,Seinen,21
+Scorpio,Ecchi,20
+Scorpio,Magic,19
+Scorpio,Sports,17
+Scorpio,Parody,17
+Scorpio,Mystery,15
+Scorpio,Military,14
+Scorpio,Super Power,13
+Scorpio,Martial Arts,12
+Scorpio,Shoujo,11
+Scorpio,Game,11
+Scorpio,Horror,11
+Scorpio,Space,10
+Scorpio,Dementia,10
+Scorpio,Harem,9
+Scorpio,Demons,8
+Scorpio,Police,7
+Scorpio,Vampire,6
+Scorpio,Samurai,6
+Scorpio,Thriller,4
+Scorpio,Cars,3
+Scorpio,Psychological,3
+Scorpio,Shoujo Ai,2
+Scorpio,Yuri,2
+Scorpio,Josei,1
+Scorpio,Yaoi,1
+Scorpio,Unknown,1
+Taurus,Comedy,157
+Taurus,Action,115
+Taurus,Fantasy,84
+Taurus,Adventure,68
+Taurus,Sci-Fi,67
+Taurus,Drama,63
+Taurus,Shounen,63
+Taurus,School,54
+Taurus,Slice of Life,49
+Taurus,Romance,46
+Taurus,Supernatural,43
+Taurus,Hentai,41
+Taurus,Historical,38
+Taurus,Kids,34
+Taurus,Music,32
+Taurus,Parody,27
+Taurus,Magic,27
+Taurus,Mecha,25
+Taurus,Sports,24
+Taurus,Seinen,23
+Taurus,Mystery,22
+Taurus,Super Power,21
+Taurus,Ecchi,20
+Taurus,Demons,16
+Taurus,Space,15
+Taurus,Military,14
+Taurus,Harem,14
+Taurus,Horror,12
+Taurus,Shoujo,11
+Taurus,Martial Arts,10
+Taurus,Psychological,10
+Taurus,Game,10
+Taurus,Vampire,8
+Taurus,Dementia,8
+Taurus,Thriller,6
+Taurus,Shoujo Ai,6
+Taurus,Shounen Ai,6
+Taurus,Police,5
+Taurus,Samurai,5
+Taurus,Cars,4
+Taurus,Unknown,2
+Taurus,Josei,2
+Unknown,Comedy,3276
+Unknown,Action,2227
+Unknown,Fantasy,1735
+Unknown,Adventure,1518
+Unknown,Sci-Fi,1334
+Unknown,Drama,1302
+Unknown,Shounen,1047
+Unknown,Slice of Life,1042
+Unknown,Romance,1000
+Unknown,School,950
+Unknown,Music,873
+Unknown,Supernatural,858
+Unknown,Hentai,813
+Unknown,Kids,798
+Unknown,Magic,592
+Unknown,Mecha,591
+Unknown,Historical,586
+Unknown,Seinen,481
+Unknown,Mystery,403
+Unknown,Shoujo,402
+Unknown,Ecchi,401
+Unknown,Sports,383
+Unknown,Parody,360
+Unknown,Super Power,334
+Unknown,Military,301
+Unknown,Demons,281
+Unknown,Horror,263
+Unknown,Space,258
+Unknown,Martial Arts,234
+Unknown,Game,219
+Unknown,Harem,217
+Unknown,Dementia,195
+Unknown,Psychological,192
+Unknown,Police,119
+Unknown,Samurai,108
+Unknown,Thriller,76
+Unknown,Vampire,71
+Unknown,Shounen Ai,60
+Unknown,Josei,59
+Unknown,Cars,54
+Unknown,Shoujo Ai,40
+Unknown,Unknown,33
+Unknown,Yuri,24
+Unknown,Yaoi,20
+Virgo,Comedy,149
+Virgo,Action,113
+Virgo,Fantasy,88
+Virgo,Adventure,72
+Virgo,Sci-Fi,60
+Virgo,Shounen,54
+Virgo,Drama,46
+Virgo,Slice of Life,46
+Virgo,Supernatural,45
+Virgo,Kids,45
+Virgo,School,43
+Virgo,Romance,42
+Virgo,Hentai,36
+Virgo,Magic,35
+Virgo,Ecchi,31
+Virgo,Music,30
+Virgo,Mecha,26
+Virgo,Seinen,23
+Virgo,Sports,23
+Virgo,Historical,23
+Virgo,Horror,17
+Virgo,Demons,17
+Virgo,Parody,17
+Virgo,Mystery,16
+Virgo,Super Power,16
+Virgo,Psychological,15
+Virgo,Game,14
+Virgo,Shoujo,13
+Virgo,Dementia,10
+Virgo,Military,10
+Virgo,Space,9
+Virgo,Martial Arts,9
+Virgo,Police,8
+Virgo,Harem,6
+Virgo,Samurai,6
+Virgo,Shoujo Ai,6
+Virgo,Thriller,4
+Virgo,Josei,4
+Virgo,Yaoi,3
+Virgo,Cars,2
+Virgo,Vampire,2
+Virgo,Unknown,2
+Virgo,Shounen Ai,1

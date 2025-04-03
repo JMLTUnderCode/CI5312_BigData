@@ -8,7 +8,7 @@ HADOOP_STREAMING_JAR=$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.4.1.
 
 # Variables del dataset
 DATASET_DIR=$REPO_DIR/tests
-INPUT_FILE=$DATASET_DIR/vshort-users-details-2023.csv
+INPUT_FILE=../../tests/users-details-2023.csv
 
 # Variables del problema
 OUTPUT_DIR=./output  # Directorio de salida para el primer MapReduce
